@@ -52,7 +52,7 @@ type Cita{
     medico:Medico!
 }
 enum Duracion {
-    media_hora
+    
     una_hora
     dos_hora
 }

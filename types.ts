@@ -14,7 +14,6 @@ export type Paciente={
    
 }
 enum Duracion{
-    media_hora=30,
     una_hora=60,
     dos_hora=120
 }

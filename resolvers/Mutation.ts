@@ -39,7 +39,8 @@ export const Mutation={
     nuevaCita:async(_:unknown,args:{nombre:string, hora:number,minuto:number, dia:number, mes:number, ano:number, duracion:string, paciente:string, medico:string}):Promise<CitaModelType>=>{
         const {nombre, hora,minuto, dia, mes, ano, duracion,paciente, medico}=args;
 
-        const fecha=ComprobarFecha(hora, minuto, dia, mes, ano, paciente)
+        const fecha=await ComprobarFecha(hora, minuto, dia, mes, ano, paciente)
+        const cita=await ComprobarCita(hora, minuto, dia, mes, ano, duracion,medico);
         
         //Comprobar que se puede guardar la cita
         const citas={

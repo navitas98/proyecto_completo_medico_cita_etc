@@ -1,0 +1,44 @@
+Ejercicio hecho para repasar conceptos de graphql
+-El ejercicio cuenta con 4 tipos de datos los cuales son medico, paciente, cita y hospital.
+    ->Los medico seran personajes de la API de star wars (SWAPI). El usuario nos pide que mostremos la url del personaje, los hospitales donde trabaja, el nombre, la
+    altura, el peso, el color de pelo, piel y ojos, el medico dara citas a los pacientes.
+    ->Por otro lado tenemos los pacientes que seran personajes de la api de rick y morty, como en el caso de medico, el usuario nos pide que mostremos el id, la url, el
+    nombre del personaje, el estatus, la especie, el tipo y la fecha de creacion, tambien podemos  ver las citas que tiene dicho paciente.
+    ->Para el caso de las citas guardaremos la hora (hora y minuto), dia, mes y año, tambien tenemos que guardar el paciente y el medico que da la cita.
+    -> En el caso de los hospitales el usuario nos pide el nombre, el cp, el codigo del pais, la latitud, longitud, la temperatura, los grados centigrados y los medicos que trabajan en el hospital.
+
+RESOLUCIÓN DEL EJERCICIO
+
+-Para realizar el ejercicio he realizado una to do list con los siguientes parametros que cumple la API
+
+Cada vez que carguemos un medico a la base de datos se tienen que tener en cuenta los siguientes parametros:
+
+    ->Se creara el medico a traves de la url y de la id del hospital
+    ->Hay que comprobar que el hospital existe
+    ->Hay que optener los datos de los personajes de Star wars.
+    ->Hacemos la anidacion de hospital
+    ->Hacemos la anidacion de cita
+
+Cada vez que carguemos un nuevo paciente a la base de datos se tienen en cuenta lo siguiente:
+
+    ->Creamos un paciente a traves de la URL
+    ->Obtenemos los datos del personaje de Rick and Morty a traves de la url.
+    ->Hacemos la anidacion de cita
+
+Cada vez que carguemos un nueva cita a la base de datos se tienen en cuenta lo siguiente:
+
+    ->Crearemos la cita a traves del nombre, la info, duracion, paciente y medico. La info o informacion contendra el dia, mes y hora, he querido hacer esto por si tenemos que hacer un substring o algo similar en el examnen.
+    ->Comprobamos que el medico existe
+    ->Comprobamos que el paciente existe
+    ->Comprobamos que el dia mes y año existen
+    ->Comprobamos que el dia mes y año son posterior al año actual
+    ->Comprobamos que solo los pacientes con un estado Alive pueden ser atendido.
+    ->Comprobamos que el medico no tiene otra cita a esa misma hora.
+    ->Hacemos la anidacion de paciente
+    ->Hacemos la anidacion de medico
+
+Cada vez que carguemos un nuevo hospital a la base de datos se tienen en cuenta lo siguiente:
+    ->Creamos el hospitak con el nombre, cp y el codigo del pais
+    ->Guardamos latitud y longitud en la bd
+    ->Obtenemos la temperatura y los grados centigrados 
+    ->Hacemos la anidacion de los medicos
